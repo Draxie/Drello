@@ -1,0 +1,157 @@
+:root{
+    --background-image: url(/assets/background1.jpg);
+    --text-color: white;
+}
+
+body,
+html{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    height: 100vh;
+}
+
+.bacground{
+    z-index: -12;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 100% 100%;
+}
+
+nav{
+    z-index: 20;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 50px;
+    background-color: rgba(#000000, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-inline: 15px;
+
+    .logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: rgb(65, 117, 150);
+
+        img{
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+    }
+
+    .name-change{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .group-name{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 20px;
+            border: none;
+            outline: none;
+            background: none;
+            color: var(--text-color);
+
+            h1{
+                font-size: 20px;
+                line-height: 20px;
+                margin-right: 10px;
+            }
+        }
+
+        .group-name:hover{
+            cursor: pointer;
+            text-shadow: 0px 0px 1.4px var(--text-color);
+        }
+
+        .change-form{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            top: 99%;
+            width: 155px;
+            height: 0px;
+            overflow: hidden;
+            background-color: rgba(#000000, 0.6);
+            border-radius: 0px 0px 10px 10px;
+            transition: 1s height;
+
+            p{
+                color: white;
+                text-align: center;
+                font-size: 16px;
+                line-height: 16px;
+                margin-block: 10px;
+            }
+
+            input{
+                width: 90%;
+                box-sizing: border-box;
+                padding-inline: 10px;
+                border: none;
+                outline: none;
+                margin-bottom: 10px;
+                border-radius: 0px 0px 10px 10px;
+            }
+        }
+        .expanded{
+            height: 63px;
+        }
+    }
+
+    .settings{
+        border: none;
+        outline: none;
+        background: none;
+        color: white;
+        font-size: 20px;
+    }
+}
+
+.workspace{
+    width: 100vw;
+    height: calc(100vh - 50px);
+    padding-top: 80px;
+    padding-inline: 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    .add-new-list{
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        color: white;
+        background: rgba(#000000, 0.6);
+        width: 260px;
+        height: 40px;
+    }
+}
+
+/*
+    <div class="add-new-list">
+        <i class="fas fa-plus"></i>
+        <p>&nbsp&nbsp Add another list </p>
+    </div>
+
+*/

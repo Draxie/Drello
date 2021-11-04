@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drello</title>
+    <script
+      src="https://kit.fontawesome.com/1c7ee85c5e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" href="/assets/logo.ico" type="image/x-icon">
+    <script src="/js/layout.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="bacground"></div>
+        <div class="logo">
+            <img src="/assets/logo.ico" alt="">
+            <h1>Drello</h1>
+        </div>
+        <div class="name-change">
+            <button class="group-name" onclick="Expand()">
+                <h1 id="group-name">Group Name</h1>
+                <i class="far fa-edit"></i>
+            </button>
+            <div class="change-form">
+                <p>Enter a new name:</p>
+                <input type="text" name="" id="group-name-input">
+            </div>
+        </div>
+        <button class="settings"><i class="fas fa-cog"></i></button>
+    </nav>
+    <main class="workspace">
+        <div class="container"></div>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>
+
