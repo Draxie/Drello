@@ -14,20 +14,20 @@ body{
 }
 
 .bacground{
-    z-index: -12;
     position: fixed;
     top: 0px;
     left: 0px;
     height: 100vh;
     width: 100vw;
-    background-image: var(--background-image);
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 100% 100%;
+    overflow: hidden;
+
+    img{
+        position: relative;
+    }
 }
 
 nav{
-    z-index: 20;
+    z-index: 9999;
     position: fixed;
     top: 0px;
     width: 100vw;
@@ -80,6 +80,7 @@ nav{
         }
 
         .change-form{
+            z-index: 20;
             position: absolute;
             display: flex;
             flex-direction: column;
@@ -125,16 +126,17 @@ nav{
 }
 
 .workspace{
+    z-index: 10;
     width: 100vw;
     height: calc(100vh - 50px);
-    padding-top: 80px;
+    padding-top: 130px;
     padding-inline: 30px;
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: row;
 
     .add-new-list{
+        z-index: 10;
         flex-shrink: 0;
         display: flex;
         flex-direction: row;
@@ -148,10 +150,4 @@ nav{
     }
 }
 
-/*
-    <div class="add-new-list">
-        <i class="fas fa-plus"></i>
-        <p>&nbsp&nbsp Add another list </p>
-    </div>
 
-*/

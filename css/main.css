@@ -14,20 +14,20 @@ body {
 }
 
 .bacground {
-  z-index: -12;
   position: fixed;
   top: 0px;
   left: 0px;
   height: 100vh;
   width: 100vw;
-  background-image: var(--background-image);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.bacground img {
+  position: relative;
 }
 
 nav {
-  z-index: 20;
+  z-index: 9999;
   position: fixed;
   top: 0px;
   width: 100vw;
@@ -110,6 +110,7 @@ nav .name-change .group-name:hover {
 }
 
 nav .name-change .change-form {
+  z-index: 20;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,21 +164,24 @@ nav .settings {
 }
 
 .workspace {
+  z-index: 10;
   width: 100vw;
   height: calc(100vh - 50px);
-  padding-top: 80px;
+  padding-top: 130px;
   padding-inline: 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .workspace .add-new-list {
+  z-index: 10;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   display: -webkit-box;
@@ -199,12 +203,4 @@ nav .settings {
   width: 260px;
   height: 40px;
 }
-
-/*
-    <div class="add-new-list">
-        <i class="fas fa-plus"></i>
-        <p>&nbsp&nbsp Add another list </p>
-    </div>
-
-*/
 /*# sourceMappingURL=main.css.map */
