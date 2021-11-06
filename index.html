@@ -15,7 +15,7 @@
 </head>
 <body>
     
-    <div class="bacground">
+    <div class="background">
         <img src="/assets/background1.jpg" alt="">
     </div>
     <nav>
@@ -36,36 +36,33 @@
         <button class="settings"><i class="fas fa-cog"></i></button>
     </nav>
     <main class="workspace">
-        <div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
-        </div><div class="add-new-list">
-            <i class="fas fa-plus"></i>
-            <p>&nbsp&nbsp Add another list </p>
+        <div class="container" draggable="true">
+            <div class="list-name">
+                <i class="far fa-edit" onclick="ToggleInput(this)"></i>
+                <input type="text" placeholder="List Name" disabled>
+                <button class="remove" onclick="RemoveList(this)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <hr>
+            <div class="card container-element" draggable="true">
+                <i class="far fa-edit" onclick="ToggleInput(this)"></i>
+                <input type="text" placeholder="Card Name" disabled>
+                <button class="remove" onclick="RemoveCard(this)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="add-new-card container-element" onclick="CreateNewCard(this)">
+                <i class="fas fa-plus"></i>
+                <p>&nbsp&nbsp Add a card</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="add-new-list">
+                <i class="fas fa-plus"></i>
+                <p>&nbsp&nbsp Add another list </p>
+            </div>
         </div>
     </main>
     <script src="/js/main.js"></script>
