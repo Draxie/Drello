@@ -30,24 +30,24 @@ function CreateNewList(){
     container.classList.add('container')
     container.innerHTML =  "<div class=\"list-name\"> <i class=\"far fa-edit\" onclick=\"ToggleInput(this)\"></i> <input type=\"text\"" +
     "placeholder=\"List Name\" disabled> <button class=\"remove\" onclick=\"RemoveList(this)\"> <i class=\"fas fa-times\"></i> </button>" +
-    "</div> <hr> <div class=\"card container-element\" draggable=\"true\"> <i class=\"far fa-edit\" onclick=\"ToggleInput(this)\"></i> " +
-    "<input type=\"text\" placeholder=\"Card Name\" disabled> <button class=\"remove\" onclick=\"RemoveCard(this)\"> <i class=\"fas fa-times\"></i>" +
-    "</button> </div> <div class=\"add-new-card container-element\" onclick=\"CreateNewCard(this)\">" +
+    "</div> <hr> <div class=\"add-new-card container-element\" onclick=\"CreateNewCard(this)\">" +
     "<i class=\"fas fa-plus\"></i> <p>&nbsp&nbsp Add a card</p> </div>"
     container.draggable = true;
 
     /* ----------- Append Card ----------- */
 
     container.addEventListener('dragover', e => {
-        e.preventDefault()
-        const afterElement = getDragAfterElement(container, e.clientY)
-        const draggable = document.querySelector('.dragging')
-        if (afterElement == null) {
-          container.appendChild(draggable)
-        } else {
-          container.insertBefore(draggable, afterElement)
-        }
-      })
+            e.preventDefault()
+            const afterElement = getDragAfterElement(container, e.clientY)
+            const draggable = document.querySelector('.dragging')
+            if(draggable){
+                if (afterElement == null) {
+                container.appendChild(draggable)
+                } else {
+                container.insertBefore(draggable, afterElement)
+                }
+            }
+    })
 
     workspace.insertBefore(container, workspace.children[workspace.children.length - 1]);
 }
@@ -69,8 +69,7 @@ function CreateNewCard(e){
         card.classList.remove('dragging')
     });
 
-
-    e.parentNode.insertBefore(card, e.parentNode.children[e.parentNode.children.length - 1])
+    e.parentNode.appendChild(card);
 }
 
 /* ----------- Adding new List ----------- */

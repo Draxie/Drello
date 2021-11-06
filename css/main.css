@@ -310,5 +310,6 @@ nav .settings {
 .workspace .dragging {
   -webkit-filter: brightness(300%);
           filter: brightness(300%);
+  background: rgba(0, 0, 0, 0.6);
 }
 /*# sourceMappingURL=main.css.map */
